@@ -4,12 +4,10 @@ import resumePDF from "@/assets/docs/Albarracin, Clarissa - Resume.pdf";
 
 export default function MainSection() {
   const EMAIL_ADDRESS = "clarissa.albarracin@gmail.com";
-  const DOWNLOAD_FILENAME = "ALBARRACIN_CLARISSA-Resume.pdf";
-
   const MAILTO_URL = `mailto:${EMAIL_ADDRESS}`;
 
   return (
-    <div className="flex flex-col items-center px-8 py-14 gap-6 ">
+    <div className="flex flex-col items-center gap-6 py-14">
       <section id="main" className="flex flex-col gap-2 items-start">
         <div className="text-2xl gap-2 flex">
           <span>Hi!</span>

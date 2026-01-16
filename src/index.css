@@ -190,7 +190,6 @@ body {
 #root {
   width: 100dvw;
   margin: 0 auto;
-  background-color: antiquewhite;
 }
 
 @layer base {
