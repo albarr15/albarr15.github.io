@@ -6,6 +6,7 @@ import MainSection from "@/components/MainSection";
 
 import BackgroundSection from "@/components/BackgroundSection";
 import SkillsTechSection from "@/components/SkillsTechSection";
+import ProjectsSection from "@/components/ProjectsSection";
 
 function App() {
   const [count, setCount] = useState(0);
@@ -17,6 +18,7 @@ function App() {
         <MainSection />
         <BackgroundSection />
         <SkillsTechSection />
+        <ProjectsSection />
       </div>
     </>
   );
