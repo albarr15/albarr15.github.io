@@ -5,9 +5,6 @@ import { Projects } from "@/lib/Projects";
 import type { Project } from "@/lib/Projects";
 
 export default function ProjectsSection() {
-  const sampleStart = new Date(2023, 1, 19);
-  const sampleEnd = new Date(2026, 2, 22);
-
   const projects: Project[] = Projects();
 
   return (

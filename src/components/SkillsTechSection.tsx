@@ -32,7 +32,6 @@ export default function SkillsTechSection() {
       <SkillsLogosWrapper title="LANGUAGES">
         <img src={HTML5Logo} alt="HTML5 Logo." width="50" height="50" />
         <img src={CSS3Logo} alt="CSS3 Logo." width="50" height="50" />
-        <img src={BootstrapLogo} alt="Bootstrap Logo." width="50" height="50" />
         <img
           src={JavaScriptLogo}
           alt="JavaScript Logo."
