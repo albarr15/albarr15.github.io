@@ -45,11 +45,7 @@ export default function ProjectCard(props: ProjectCardProps) {
             </span>
           )}
         </div>
-        <p className="text-muted-foreground font-light">
-          A responsive single-page application for typing practice using classic
-          literature, featuring real-time WPM, typing time, and accuracy
-          metrics.
-        </p>
+        <p className="text-muted-foreground font-light">{props.desc}</p>
       </div>
       <div className="flex flex-col gap-3">
         {props.imgSrc && (
