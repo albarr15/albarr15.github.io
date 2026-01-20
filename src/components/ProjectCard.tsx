@@ -19,7 +19,7 @@ export default function ProjectCard(props: ProjectCardProps) {
 
   return (
     <div className="flex flex-col gap-6">
-      <div className="flex flex-col gap-1.5">
+      <div className="flex flex-col gap-2">
         <div>
           <div>
             <span className="text-muted-foreground uppercase font-semibold">
@@ -27,15 +27,23 @@ export default function ProjectCard(props: ProjectCardProps) {
             </span>
           </div>
 
-          <span className="font-semibold text-lg">{props.title}</span>
-          <Github
-            className="inline-block ml-3 mb-2 stroke-3 hover:"
-            size={16}
-          />
-          <ArrowUpRight
-            className="inline-block mb-2 stroke-3 hover:"
-            size={16}
-          />
+          {props.repoLink ? (
+            <a
+              href={props.repoLink}
+              target="_blank"
+              rel="noreferrer"
+              className="font-semibold text-lg/snug hover:text-primary hover:underline"
+            >
+              {props.title}
+
+              <Github className="inline-block ml-2 mb-1 stroke-3" size={16} />
+              <ArrowUpRight className="inline-block mb-1 stroke-3" size={16} />
+            </a>
+          ) : (
+            <span className="font-semibold text-lg/snug hover:text-primary hover:underline">
+              {props.title}
+            </span>
+          )}
         </div>
         <p className="text-muted-foreground font-light">
           A responsive single-page application for typing practice using classic
@@ -44,21 +52,30 @@ export default function ProjectCard(props: ProjectCardProps) {
         </p>
       </div>
       <div className="flex flex-col gap-3">
-        <img
-          src={props.imgSrc}
-          alt="Typrtxt Practice Typing Test Interface"
-          className="shadow-md rounded-md"
-        />
-
-        <Button asChild size="sm" variant="outline" className="fill-container">
-          <a
-            href="https://typrtxt.vercel.app/"
-            target="_blank"
-            rel="noreferrer"
+        {props.imgSrc && (
+          <img
+            src={props.imgSrc}
+            alt="Typrtxt Practice Typing Test Interface"
+            className="shadow-md rounded-md"
+          />
+        )}
+        {props.liveLink && (
+          <Button
+            asChild
+            size="sm"
+            variant="outline"
+            className="fill-container"
           >
-            <Globe /> View Live
-          </a>
-        </Button>
+            <a
+              href="https://typrtxt.vercel.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Globe /> View Live
+            </a>
+          </Button>
+        )}
+
         <div className="flex flex-wrap gap-2">
           {props.techStack.map((tech) => (
             <Badge
