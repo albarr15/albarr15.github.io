@@ -211,4 +211,8 @@ body {
   [role="button"]:not(:disabled) {
     cursor: pointer;
   }
+
+  * {
+    border-color: var(--color-border);
+  }
 }
