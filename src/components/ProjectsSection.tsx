@@ -1,6 +1,8 @@
 import SectionWrapper from "@/components/SectionWrapper";
 import ProjectCard from "@/components/ProjectCard";
 
+import typrtxtImg from "@/assets/projects/Typing Practice Site 1.png";
+
 export default function ProjectsSection() {
   const sampleStart = new Date(2023, 1, 19);
   const sampleEnd = new Date(2026, 2, 22);
@@ -10,7 +12,7 @@ export default function ProjectsSection() {
       <ProjectCard
         startDate={sampleStart}
         endDate={sampleEnd}
-        title="typrtxt"
+        title="typrtxt: Typing Practice Site using Classic Literature"
         desc="A responsive single-page application for typing practice using classic literature, featuring real-time WPM, typing time, and accuracy metrics."
         techStack={[
           "Vue",
@@ -20,6 +22,7 @@ export default function ProjectsSection() {
           "epubjs",
           "Vue Router",
         ]}
+        imgSrc={typrtxtImg}
       />
     </SectionWrapper>
   );
