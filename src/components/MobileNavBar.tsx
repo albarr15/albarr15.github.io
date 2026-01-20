@@ -13,7 +13,7 @@ import {
 export default function MobileNavBar() {
   return (
     <>
-      <nav className="100dvw flex justify-between">
+      <nav className="100dvw flex justify-between sticky top-0 z-50 bg-white/30 backdrop-blur-sm h-16 items-center">
         <Link to={"/"}>
           clarissa<span className="font-bold">albarr</span>
         </Link>
