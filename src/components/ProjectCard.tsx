@@ -1,6 +1,6 @@
 type ProjectCardProps = {
   startDate: Date;
-  endDate?: Date;
+  endDate: Date;
   title: string;
   desc: string;
   liveLink?: string;
@@ -8,31 +8,14 @@ type ProjectCardProps = {
   techStack: string[];
 };
 
+import { DateRange } from "@/lib/DateRange";
+
 export default function ProjectCard(props: ProjectCardProps) {
-  const months = [
-    "Jan",
-    "Feb",
-    "Mar",
-    "Apr",
-    "May",
-    "Jun",
-    "July",
-    "Aug",
-    "Sept",
-    "Oct",
-    "Nov",
-    "Dec",
-  ];
-  const startMonth = months[props.startDate.getMonth()];
-  const startYear = props.startDate.getFullYear();
-  const endMonth = props.endDate ? months[props.endDate.getMonth()] : null;
-  const endYear = props.endDate ? props.endDate.getFullYear() : null;
+  const dateRange = DateRange(props.startDate, props.endDate);
 
   return (
     <div className="flex flex-col">
-      <span className="text-muted-foreground">
-        {startMonth} - {endMonth} {endYear}
-      </span>
+      <span className="text-muted-foreground">{dateRange}</span>
     </div>
   );
 }

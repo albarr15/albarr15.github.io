@@ -2,8 +2,8 @@ import SectionWrapper from "@/components/SectionWrapper";
 import ProjectCard from "@/components/ProjectCard";
 
 export default function ProjectsSection() {
-  const sampleStart = new Date(2026, 0, 19);
-  const sampleEnd = new Date(2026, 1, 14);
+  const sampleStart = new Date(2023, 1, 19);
+  const sampleEnd = new Date(2026, 2, 22);
 
   return (
     <SectionWrapper id="projects" title="Projects">
