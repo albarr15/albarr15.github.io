@@ -24,12 +24,12 @@ import TypeScriptLogo from "@/assets/logos/icons8-typescript.svg";
 import VSCodeLogo from "@/assets/logos/icons8-visual-studio-code-2019.svg";
 import VueLogo from "@/assets/logos/icons8-vue-js.svg";
 
-import SkillsLogoGrid from "@/components/SkillsLogoGrid";
+import SkillsLogosWrapper from "@/components/SkillsLogosWrapper";
 
 export default function SkillsTechSection() {
   return (
     <SectionWrapper id="skills" title="Skills & Technologies">
-      <SkillsLogoGrid title="LANGUAGES">
+      <SkillsLogosWrapper title="LANGUAGES">
         <img src={HTML5Logo} alt="HTML5 Logo." width="50" height="50" />
         <img src={CSS3Logo} alt="CSS3 Logo." width="50" height="50" />
         <img src={BootstrapLogo} alt="Bootstrap Logo." width="50" height="50" />
@@ -50,8 +50,8 @@ export default function SkillsTechSection() {
         <img src={JavaLogo} alt="Java Logo." width="50" height="50" />
         <img src={PythonLogo} alt="Python Logo." width="50" height="50" />
         <img src={KotlinLogo} alt="Kotlin Logo." width="50" height="50" />
-      </SkillsLogoGrid>
-      <SkillsLogoGrid title="FRAMEWORKS & LIBRARIES">
+      </SkillsLogosWrapper>
+      <SkillsLogosWrapper title="FRAMEWORKS & LIBRARIES">
         <img src={ReactLogo} alt="React Logo." width="50" height="50" />
         <img src={VueLogo} alt="Vue Logo." width="50" height="50" />
         <img
@@ -63,8 +63,8 @@ export default function SkillsTechSection() {
         <img src={BootstrapLogo} alt="Bootstrap Logo." width="50" height="50" />
         <img src={FlaskLogo} alt="Flask Logo." width="50" height="50" />
         <img src={NodeJSLogo} alt="Nodejs Logo." width="50" height="50" />
-      </SkillsLogoGrid>
-      <SkillsLogoGrid title="TOOLS & DATABASES">
+      </SkillsLogosWrapper>
+      <SkillsLogosWrapper title="TOOLS & DATABASES">
         <img src={MySQLLogo} alt="MySQL Logo." width="50" height="50" />
         <img
           src={PostgreSQLLogo}
@@ -83,7 +83,7 @@ export default function SkillsTechSection() {
         <img src={GithubLogo} alt="GitHub Logo." width="50" height="50" />
         <img src={GitLogo} alt="Git Logo." width="50" height="50" />
         <img src={FigmaLogo} alt="Figma Logo." width="50" height="50" />
-      </SkillsLogoGrid>
+      </SkillsLogosWrapper>
     </SectionWrapper>
   );
 }
