@@ -22,7 +22,7 @@ export default function MainSection() {
         </p>
       </section>
 
-      <div className="flex gap-3">
+      <div className="flex flex-wrap  items-center justify-center gap-3">
         <a href={resumePDF} download>
           <Button variant="outline" size="sm">
             <File /> Download Resume
