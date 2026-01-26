@@ -6,21 +6,6 @@ import SkillsTechSection from "@/components/SkillsTechSection";
 import ProjectsSection from "@/components/ProjectsSection";
 import ExperiencesSection from "@/components/ExperiencesSection";
 
-// function App() {
-//   return (
-//     <>
-//       <MobileNavBar />
-//       <div className="gap-3 flex flex-col px-8 py-10 max-w-3xl mx-auto">
-//         <MainSection />
-//         <BackgroundSection />
-//         <SkillsTechSection />
-//         <ProjectsSection />
-//         <ExperiencesSection />
-//       </div>
-//     </>
-//   );
-// }
-
 function App() {
   const scrollToSection = (id: string) => {
     const section = document.getElementById(id);
@@ -29,9 +14,6 @@ function App() {
     }
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0 });
-  };
   return (
     <>
       <MobileNavBar />
