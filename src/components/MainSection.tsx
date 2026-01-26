@@ -7,8 +7,8 @@ export default function MainSection() {
   const MAILTO_URL = `mailto:${EMAIL_ADDRESS}`;
 
   return (
-    <div className="flex flex-col items-center gap-6 py-14">
-      <section id="main" className="flex flex-col gap-2 items-start">
+    <div className="flex flex-col gap-6 py-14 md:py-7">
+      <section id="main" className="flex flex-col gap-2">
         <div className="text-2xl gap-2 flex">
           <span>Hi!</span>
           <span>👋</span>
