@@ -62,11 +62,7 @@ export default function ProjectCard(props: ProjectCardProps) {
             variant="outline"
             className="fill-container"
           >
-            <a
-              href="https://typrtxt.vercel.app/"
-              target="_blank"
-              rel="noreferrer"
-            >
+            <a href={props.liveLink} target="_blank" rel="noreferrer">
               <Globe /> View Live
             </a>
           </Button>
