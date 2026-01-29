@@ -45,7 +45,7 @@ export default function MobileNavBar() {
               Projects
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => scrollToSection("experiences")}>
-              Experience
+              Experiences
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

@@ -10,7 +10,7 @@ export default function SkillsTechSection() {
 
   return (
     <SectionWrapper id="skills" title="Skills & Technologies">
-      <SkillsLogosWrapper title="LANGUAGES">
+      <SkillsLogosWrapper>
         {skills.map((skill) => (
           <SkillLogo
             key={skill.name}
