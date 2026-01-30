@@ -1,12 +1,9 @@
 import { Menu } from "lucide-react";
 
-import { Link } from "react-router-dom";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
-  DropdownMenuLabel,
-  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 
@@ -23,7 +20,7 @@ export default function MobileNavBar() {
   };
   return (
     <>
-      <nav className="100dvw flex justify-between sticky top-0 z-50 bg-background/30 backdrop-blur-sm h-16 items-center md:hidden">
+      <nav className="100dvw px-12 flex justify-between sticky top-0 z-50 bg-background/30 backdrop-blur-sm h-16 items-center md:hidden">
         <div onClick={() => scrollToTop()} className="cursor-pointer">
           clarissa<span className="font-bold">albarr</span>
         </div>
