@@ -7,7 +7,7 @@ export default function BackgroundSection() {
         <p>
           I've always been passionate about the creative side of things. I
           dabbled in graphic design and video editing which soon led me to
-          crafting over 460+ projects for 40+ unique clients worldwide! I also
+          crafting over 460+ projects for 40+ unique clients worldwide. I also
           love building stuff be it custom keyboards or web applications. Soon,
           I found front-end development to be the perfect middle ground,
           combining my eye for design with my technical skills.
@@ -21,8 +21,7 @@ export default function BackgroundSection() {
         <p>
           Whether I'm working on my projects or just building another keyboard,
           I'm passionate about crafting things that not only look great, but
-          work flawlessly — because good design should always meet great
-          functionality.
+          work great.
         </p>
       </div>
     </SectionWrapper>

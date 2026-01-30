@@ -17,7 +17,7 @@ export function Projects(): Project[] {
 
   const typrtxtProject: Project = {
     startDate: new Date(2025, 8),
-    endDate: new Date(2025, 11),
+    endDate: new Date(2026, 0),
     title: "typrtxt: Typing Practice Site using Classic Literature",
     desc: "A responsive single-page application for typing practice using classic literature, featuring real-time WPM, typing time, and accuracy metrics.",
     liveLink: "https://typrtxt.vercel.app/",

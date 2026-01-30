@@ -48,6 +48,32 @@ import VueLogoMono from "@/assets/logos/mono/icons8-vue-js.svg";
 
 export default [
   {
+    name: "JavaScript",
+    icon: JavaScriptLogo,
+    iconMono: JavaScriptLogoMono,
+  },
+  {
+    name: "React",
+    icon: ReactLogo,
+    iconMono: ReactLogoMono,
+  },
+  {
+    name: "TypeScript",
+    icon: TypeScriptLogo,
+    iconMono: TypeScriptLogoMono,
+  },
+
+  {
+    name: "Vue",
+    icon: VueLogo,
+    iconMono: VueLogoMono,
+  },
+  {
+    name: "Node.js",
+    icon: NodeJSLogo,
+    iconMono: NodeJSLogoMono,
+  },
+  {
     name: "HTML5",
     icon: HTML5Logo,
     iconMono: HTML5LogoMono,
@@ -57,75 +83,17 @@ export default [
     icon: CSS3Logo,
     iconMono: CSS3LogoMono,
   },
-  {
-    name: "JavaScript",
-    icon: JavaScriptLogo,
-    iconMono: JavaScriptLogoMono,
-  },
-  {
-    name: "TypeScript",
-    icon: TypeScriptLogo,
-    iconMono: TypeScriptLogoMono,
-  },
-  {
-    name: "C",
-    icon: CLogo,
-    iconMono: CLogoMono,
-  },
-  {
-    name: "C++",
-    icon: CplusplusLogo,
-    iconMono: CplusplusLogoMono,
-  },
-  {
-    name: "Java",
-    icon: JavaLogo,
-    iconMono: JavaLogoMono,
-  },
-  {
-    name: "Python",
-    icon: PythonLogo,
-    iconMono: PythonLogoMono,
-  },
-  {
-    name: "Kotlin",
-    icon: KotlinLogo,
-    iconMono: KotlinLogoMono,
-  },
-  {
-    name: "React",
-    icon: ReactLogo,
-    iconMono: ReactLogoMono,
-  },
-  {
-    name: "Vue",
-    icon: VueLogo,
-    iconMono: VueLogoMono,
-  },
+
   {
     name: "Tailwind CSS",
     icon: TailwindCSSLogo,
     iconMono: TailwindCSSLogoMono,
   },
+
   {
-    name: "Bootstrap",
-    icon: BootstrapLogo,
-    iconMono: BootstrapLogoMono,
-  },
-  {
-    name: "Flask",
-    icon: FlaskLogoMono,
-    iconMono: FlaskLogoMono,
-  },
-  {
-    name: "Node.js",
-    icon: NodeJSLogo,
-    iconMono: NodeJSLogoMono,
-  },
-  {
-    name: "MySQL",
-    icon: MySQLLogo,
-    iconMono: MySQLLogoMono,
+    name: "Supabase",
+    icon: SupabaseLogo,
+    iconMono: SupabaseLogoMono,
   },
   {
     name: "PostgreSQL",
@@ -133,19 +101,52 @@ export default [
     iconMono: PostgreSQLLogoMono,
   },
   {
-    name: "Supabase",
-    icon: SupabaseLogo,
-    iconMono: SupabaseLogoMono,
+    name: "MySQL",
+    icon: MySQLLogo,
+    iconMono: MySQLLogoMono,
   },
+
   {
     name: "MongoDB",
     icon: MongoDBLogo,
     iconMono: MongoDBLogoMono,
   },
   {
-    name: "VS Code",
-    icon: VSCodeLogo,
-    iconMono: VSCodeLogoMono,
+    name: "Python",
+    icon: PythonLogo,
+    iconMono: PythonLogoMono,
+  },
+  {
+    name: "Flask",
+    icon: FlaskLogoMono,
+    iconMono: FlaskLogoMono,
+  },
+  {
+    name: "Java",
+    icon: JavaLogo,
+    iconMono: JavaLogoMono,
+  },
+
+  {
+    name: "Kotlin",
+    icon: KotlinLogo,
+    iconMono: KotlinLogoMono,
+  },
+  {
+    name: "C++",
+    icon: CplusplusLogo,
+    iconMono: CplusplusLogoMono,
+  },
+  {
+    name: "C",
+    icon: CLogo,
+    iconMono: CLogoMono,
+  },
+
+  {
+    name: "Git",
+    icon: GitLogo,
+    iconMono: GitLogoMono,
   },
   {
     name: "GitHub",
@@ -153,13 +154,18 @@ export default [
     iconMono: GithubLogoMono,
   },
   {
-    name: "Git",
-    icon: GitLogo,
-    iconMono: GitLogoMono,
-  },
-  {
     name: "Figma",
     icon: FigmaLogo,
     iconMono: FigmaLogoMono,
+  },
+  {
+    name: "Bootstrap",
+    icon: BootstrapLogo,
+    iconMono: BootstrapLogoMono,
+  },
+  {
+    name: "VS Code",
+    icon: VSCodeLogo,
+    iconMono: VSCodeLogoMono,
   },
 ];

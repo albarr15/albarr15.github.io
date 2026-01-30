@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Mail, File } from "lucide-react";
-import resumePDF from "@/assets/docs/Albarracin, Clarissa - Resume.pdf";
+import resumePDF from "@/assets/docs/Albarracin, Clarissa.pdf";
 
 export default function MainSection() {
   const EMAIL_ADDRESS = "clarissa.albarracin@gmail.com";
@@ -17,8 +17,8 @@ export default function MainSection() {
           I'm <span className="font-bold">Clarissa Albarracin</span>,
         </div>
         <p>
-          an aspiring front-end developer bridging design and development to
-          build polished, intuitive web experiences.
+          an aspiring front-end developer based in Pasig City, PH bridging
+          design and development to build polished, intuitive web experiences.
         </p>
       </section>
 
