@@ -17,23 +17,43 @@ function App() {
   return (
     <>
       <MobileNavBar />
-      <div className="px-8 max-w-3xl md:max-w-7xl mx-auto">
+      <div className="px-8 max-w-3xl md:max-w-7xl mx-auto ">
         <div className="gap-3 flex flex-col md:flex-row md:gap-12">
           <aside className="md:w-1/3 md:shrink-0 md:sticky md:h-screen md:top-0">
             <div className="md:h-screen md:justify-center md:py-0 flex flex-col">
               <MainSection />
               <hr />
               <div className="hidden md:flex md:flex-col md:items-start md:gap-6 md:mt-12">
-                <button onClick={() => scrollToSection("background")}>
+                <button
+                  onClick={() => scrollToSection("background")}
+                  className="relative fit-content hover:after:absolute hover:after:bg-accent
+                  hover:after:inset-0 hover:after:-z-10 hover:px-4 hover:font-bold py-1
+                  transition-all duration-150"
+                >
                   Background
                 </button>
-                <button onClick={() => scrollToSection("skills")}>
+                <button
+                  onClick={() => scrollToSection("skills")}
+                  className="relative fit-content hover:after:absolute hover:after:bg-accent
+                  hover:after:inset-0 hover:after:-z-10 hover:px-4 hover:font-bold py-1
+                  transition-all duration-150"
+                >
                   Skills & Technologies
                 </button>
-                <button onClick={() => scrollToSection("projects")}>
+                <button
+                  onClick={() => scrollToSection("projects")}
+                  className="relative fit-content hover:after:absolute hover:after:bg-accent
+                  hover:after:inset-0 hover:after:-z-10 hover:px-4 hover:font-bold py-1
+                  transition-all duration-150"
+                >
                   Projects
                 </button>
-                <button onClick={() => scrollToSection("experiences")}>
+                <button
+                  onClick={() => scrollToSection("experiences")}
+                  className="relative fit-content hover:after:absolute hover:after:bg-accent
+                  hover:after:inset-0 hover:after:-z-10 hover:px-4 hover:font-bold py-1
+                  transition-all duration-150"
+                >
                   Experiences
                 </button>
               </div>
