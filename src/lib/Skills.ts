@@ -5,7 +5,7 @@ import CSS3Logo from "@/assets/logos/colored/icons8-css3.svg";
 import FigmaLogo from "@/assets/logos/colored/icons8-figma.svg";
 // import FlaskLogo from "@/assets/logos/colored/icons8-flask.svg";
 import GitLogo from "@/assets/logos/colored/icons8-git.svg";
-import GithubLogo from "@/assets/logos/colored/icons8-github.svg";
+// import GithubLogo from "@/assets/logos/colored/icons8-github.svg";
 import HTML5Logo from "@/assets/logos/colored/icons8-html-5.svg";
 import JavaLogo from "@/assets/logos/colored/icons8-java.svg";
 import JavaScriptLogo from "@/assets/logos/colored/icons8-javascript.svg";
