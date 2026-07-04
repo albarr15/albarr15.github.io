@@ -21,6 +21,8 @@ export default function ProjectsSection() {
             repoLink={project.repoLink}
             techStack={project.techStack}
             imgSrc={project.imgSrc}
+            altText={project.altText}
+            pageLink={project.pageLink}
           />
         ))}
       </div>

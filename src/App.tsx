@@ -51,6 +51,14 @@ function App() {
                     Background
                   </button>
                   <button
+                    onClick={() => scrollToSection("experiences")}
+                    className="relative fit-content hover:after:absolute hover:after:bg-accent
+                  hover:after:inset-0 hover:after:-z-10 hover:px-4 hover:font-bold py-1
+                  transition-all duration-300"
+                  >
+                    Experiences
+                  </button>
+                  <button
                     onClick={() => scrollToSection("skills")}
                     className="relative fit-content hover:after:absolute hover:after:bg-accent
                   hover:after:inset-0 hover:after:-z-10 hover:px-4 hover:font-bold py-1
@@ -66,22 +74,14 @@ function App() {
                   >
                     Projects
                   </button>
-                  <button
-                    onClick={() => scrollToSection("experiences")}
-                    className="relative fit-content hover:after:absolute hover:after:bg-accent
-                  hover:after:inset-0 hover:after:-z-10 hover:px-4 hover:font-bold py-1
-                  transition-all duration-300"
-                  >
-                    Experiences
-                  </button>
                 </div>
               </div>
             </aside>
             <main className="py-10 flex flex-col gap-24 pb-77">
               <BackgroundSection />
+              <ExperiencesSection />
               <SkillsTechSection />
               <ProjectsSection />
-              <ExperiencesSection />
             </main>
           </div>
         </div>

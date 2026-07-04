@@ -5,8 +5,10 @@ type ProjectCardProps = {
   desc: string;
   liveLink?: string;
   repoLink?: string;
+  pageLink: string;
   techStack: string[];
   imgSrc?: string;
+  altText: string;
 };
 
 import { DateRange } from "@/lib/DateRange";
@@ -14,12 +16,12 @@ import { ArrowUpRight, Globe, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function ProjectCard(props: ProjectCardProps) {
   const dateRange = DateRange(props.startDate, props.endDate);
   const [isHovered, setIsHovered] = useState(false);
 
-  // TODO: Update bg according to fast-average-color of image, move badges and links, add separate page per project
   return (
     <div className="flex flex-col gap-6">
       <div className="flex flex-col gap-3">
@@ -30,17 +32,19 @@ export default function ProjectCard(props: ProjectCardProps) {
         </div>
         {props.imgSrc && (
           <div
-            className="relative rounded-md overflow-clip"
+            className="relative rounded-md overflow-clip "
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
+            <Link to={props.pageLink} className="absolute inset-0 z-20"></Link>
+            <div className="absolute inset-0 bg-background/30 z-10"></div>
             <img
               src={props.imgSrc}
-              alt="Typrtxt Practice Typing Test Interface"
+              alt={props.altText}
               className={`shadow-md ${isHovered ? "scale-105 transition duration-300" : "scale-100 transition duration-300"}`}
             />
-            <div className="absolute bottom-0 left-0">
-              <div className="flex flex-col gap-2 bg-linear-to-t from-black/40  via-black/10 to-transparent backdrop-blur-3xl p-3">
+            <div className="absolute bottom-0 left-0 z-30">
+              <div className="flex flex-col gap-2 bg-linear-to-t from-background via-background/80 to-transparent p-3">
                 <div>
                   {props.repoLink ? (
                     <a
