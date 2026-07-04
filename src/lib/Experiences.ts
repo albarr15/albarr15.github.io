@@ -8,17 +8,6 @@ export type Experience = {
 export function Experiences(): Experience[] {
   let experiences = new Array<Experience>();
 
-  const abbeExp: Experience = {
-    startDate: new Date(2026, 3),
-    endDate: new Date(2026, 5),
-    position:
-      "Web Development and UI/UX Intern at ABBE Technology Solutions, Inc.",
-    desc:
-      "Built and shipped the Work Schedules feature for an HRIS platform using Angular and .NET, integrating " +
-      "RESTful APIs for CRUD operations, custom date-range filtering, and multi-schedule editing across admin " +
-      "and employee views",
-  };
-
   const indContractorExp: Experience = {
     startDate: new Date(2023, 4),
     endDate: new Date(2025, 11),
