@@ -8,16 +8,20 @@ import TyprtxtPage from "@/pages/TyprtxtPage.tsx";
 import ShizUniversityPage from "./pages/ShizUniversityPage.tsx";
 import ABBEPage from "./pages/ABBEPage.tsx";
 import WhatHaffenPage from "./pages/WhatHaffenPage.tsx";
+import MainLayout from "./components/MainLayout.tsx";
 
 const router = createBrowserRouter([
   {
     path: "/",
-    element: <App />,
+    Component: MainLayout,
+    children: [
+      { index: true, Component: App },
+      { path: "typrtxt", Component: TyprtxtPage },
+      { path: "abbe", Component: ABBEPage },
+      { path: "what_haffen_fella", Component: WhatHaffenPage },
+      { path: "shiz", Component: ShizUniversityPage },
+    ],
   },
-  { path: "/typrtxt", element: <TyprtxtPage /> },
-  { path: "/shiz", element: <ShizUniversityPage /> },
-  { path: "/what_haffen_fella", element: <WhatHaffenPage /> },
-  { path: "/abbe", element: <ABBEPage /> },
 ]);
 
 createRoot(document.getElementById("root")!).render(
