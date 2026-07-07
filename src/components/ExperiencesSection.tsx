@@ -34,7 +34,6 @@ export default function ExperiencesSection({
           techStack={["Angular", ".NET", "TypeScript", "C#", "PostgreSQL"]}
           imgSrc={abbeHRISImg}
           altText={abbeExp.position}
-          pageLink="/abbe"
           onABBEClick={onABBEClick}
         />
         {experiences.map((exp: Experience, idx: number) => (

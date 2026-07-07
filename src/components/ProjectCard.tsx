@@ -5,7 +5,6 @@ export interface ProjectCardProps {
   desc: string;
   liveLink?: string;
   repoLink?: string;
-  pageLink?: string;
   techStack: string[];
   imgSrc?: string;
   altText: string;
@@ -45,12 +44,6 @@ export default function ProjectCard(props: ProjectCardProps) {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            {/* {props.pageLink && (
-              <Link
-                to={props.pageLink}
-                className="absolute inset-0 z-20"
-              ></Link>
-            )} */}
             {props.onABBEClick && (
               <div
                 className="absolute inset-0 z-20 cursor-pointer"
@@ -95,7 +88,7 @@ export default function ProjectCard(props: ProjectCardProps) {
                   variant="outline"
                   size="sm"
                   className={`self-start transition-all duration-300 ${
-                    isHovered
+                    isHovered && props.onABBEClick
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-2 pointer-events-none h-0 overflow-hidden"
                   }`}
