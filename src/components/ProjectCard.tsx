@@ -9,6 +9,7 @@ export interface ProjectCardProps {
   techStack: string[];
   imgSrc?: string;
   altText: string;
+  onABBEClick?: () => void;
 }
 
 import { DateRange } from "@/lib/DateRange";
@@ -16,11 +17,19 @@ import { ArrowUpRight, Globe, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useState } from "react";
-import { Link } from "react-router-dom";
 
 export default function ProjectCard(props: ProjectCardProps) {
   const dateRange = DateRange(props.startDate, props.endDate);
   const [isHovered, setIsHovered] = useState(false);
+
+  const handleABBEClick = () => {
+    props.onABBEClick?.();
+    window.scrollTo({
+      top: 0,
+      left: 0,
+      behavior: "smooth",
+    });
+  };
 
   return (
     <div className="flex flex-col gap-6">
@@ -36,11 +45,17 @@ export default function ProjectCard(props: ProjectCardProps) {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            {props.pageLink && (
+            {/* {props.pageLink && (
               <Link
                 to={props.pageLink}
                 className="absolute inset-0 z-20"
               ></Link>
+            )} */}
+            {props.onABBEClick && (
+              <div
+                className="absolute inset-0 z-20 cursor-pointer"
+                onClick={handleABBEClick}
+              ></div>
             )}
             <div className="absolute inset-0 bg-background/30 z-10"></div>
             <img

@@ -8,14 +8,46 @@ import ExperiencesSection from "@/components/ExperiencesSection";
 
 import DotGrid from "@/components/DotGrid";
 import ABBESection from "./components/Sections/ABBESection";
+import { useState, useEffect } from "react";
 
 function App() {
+  const [pendingScroll, setPendingScroll] = useState("");
+  const [showABBESection, setShowABBESection] = useState(false);
+
+  useEffect(() => {
+    if (!showABBESection && pendingScroll) {
+      const section = document.getElementById(pendingScroll);
+      if (section) {
+        section.scrollIntoView();
+      }
+    }
+  }, [pendingScroll, showABBESection]);
+
   const scrollToSection = (id: string) => {
+    if (showDetailSection) {
+      setShowABBESection(false);
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth",
+      });
+
+      // indicate for pending scrolls to main sections by their ids
+      setPendingScroll(id);
+      return;
+    }
+
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView();
     }
   };
+
+  const handleShowABBESection = () => {
+    setShowABBESection(true);
+  };
+
+  const showDetailSection = showABBESection ? true : false;
 
   return (
     <>
@@ -79,11 +111,16 @@ function App() {
               </div>
             </aside>
             <main className="py-10 flex flex-col gap-24 pb-77">
-              <BackgroundSection />
-              <ExperiencesSection />
-              <SkillsTechSection />
-              <ProjectsSection />
-              <ABBESection />
+              {!showDetailSection && (
+                <>
+                  <BackgroundSection />
+                  <ExperiencesSection onABBEClick={handleShowABBESection} />
+                  <SkillsTechSection />
+                  <ProjectsSection />
+                </>
+              )}
+
+              {showABBESection && <ABBESection />}
             </main>
           </div>
         </div>

@@ -5,7 +5,11 @@ import ExperienceCard from "@/components/ExperienceCard";
 import ProjectCard from "./ProjectCard";
 import abbeHRISImg from "@/assets/projects/ABBE/ABBE HRIS/1.png";
 
-export default function ExperiencesSection() {
+export default function ExperiencesSection({
+  onABBEClick,
+}: {
+  onABBEClick: () => void;
+}) {
   const experiences: Experience[] = Experiences();
 
   const abbeExp: Experience = {
@@ -31,6 +35,7 @@ export default function ExperiencesSection() {
           imgSrc={abbeHRISImg}
           altText={abbeExp.position}
           pageLink="/abbe"
+          onABBEClick={onABBEClick}
         />
         {experiences.map((exp: Experience, idx: number) => (
           <ExperienceCard
