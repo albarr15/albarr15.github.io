@@ -1,15 +1,15 @@
-type ProjectCardProps = {
+export interface ProjectCardProps {
   startDate: Date;
   endDate: Date;
   title: string;
   desc: string;
   liveLink?: string;
   repoLink?: string;
-  pageLink: string;
+  pageLink?: string;
   techStack: string[];
   imgSrc?: string;
   altText: string;
-};
+}
 
 import { DateRange } from "@/lib/DateRange";
 import { ArrowUpRight, Globe, Github } from "lucide-react";
@@ -36,7 +36,12 @@ export default function ProjectCard(props: ProjectCardProps) {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            <Link to={props.pageLink} className="absolute inset-0 z-20"></Link>
+            {props.pageLink && (
+              <Link
+                to={props.pageLink}
+                className="absolute inset-0 z-20"
+              ></Link>
+            )}
             <div className="absolute inset-0 bg-background/30 z-10"></div>
             <img
               src={props.imgSrc}

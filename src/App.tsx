@@ -7,6 +7,7 @@ import ProjectsSection from "@/components/ProjectsSection";
 import ExperiencesSection from "@/components/ExperiencesSection";
 
 import DotGrid from "@/components/DotGrid";
+import ABBESection from "./components/Sections/ABBESection";
 
 function App() {
   const scrollToSection = (id: string) => {
@@ -82,6 +83,7 @@ function App() {
               <ExperiencesSection />
               <SkillsTechSection />
               <ProjectsSection />
+              <ABBESection />
             </main>
           </div>
         </div>
