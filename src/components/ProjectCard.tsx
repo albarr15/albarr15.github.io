@@ -8,21 +8,25 @@ export interface ProjectCardProps {
   techStack: string[];
   imgSrc?: string;
   altText: string;
-  onABBEClick?: () => void;
+  project?: string;
 }
 
 import { DateRange } from "@/lib/DateRange";
 import { ArrowUpRight, Globe, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { DetailsSectionContext } from "@/contexts/DetailsSectionContext";
 
 export default function ProjectCard(props: ProjectCardProps) {
   const dateRange = DateRange(props.startDate, props.endDate);
   const [isHovered, setIsHovered] = useState(false);
+  const { selectedProject, setSelectedProject } = useContext(
+    DetailsSectionContext,
+  );
 
-  const handleABBEClick = () => {
-    props.onABBEClick?.();
+  const handleProjectDetailsClick = (project: string) => {
+    setSelectedProject(project);
     window.scrollTo({
       top: 0,
       left: 0,
@@ -44,10 +48,10 @@ export default function ProjectCard(props: ProjectCardProps) {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            {props.onABBEClick && (
+            {props.project && (
               <div
                 className="absolute inset-0 z-20 cursor-pointer"
-                onClick={handleABBEClick}
+                onClick={() => handleProjectDetailsClick("ABBE")}
               ></div>
             )}
             <div className="absolute inset-0 bg-background/30 z-10"></div>
@@ -88,7 +92,7 @@ export default function ProjectCard(props: ProjectCardProps) {
                   variant="outline"
                   size="sm"
                   className={`self-start transition-all duration-300 ${
-                    isHovered && props.onABBEClick
+                    isHovered && props.project
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-2 pointer-events-none h-0 overflow-hidden"
                   }`}

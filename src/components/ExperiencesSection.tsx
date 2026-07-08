@@ -5,11 +5,7 @@ import ExperienceCard from "@/components/ExperienceCard";
 import ProjectCard from "./ProjectCard";
 import abbeHRISImg from "@/assets/projects/ABBE/ABBE HRIS/1.png";
 
-export default function ExperiencesSection({
-  onABBEClick,
-}: {
-  onABBEClick: () => void;
-}) {
+export default function ExperiencesSection() {
   const experiences: Experience[] = Experiences();
 
   const abbeExp: Experience = {
@@ -31,10 +27,17 @@ export default function ExperiencesSection({
           endDate={abbeExp.endDate}
           title={abbeExp.position}
           desc={abbeExp.desc}
-          techStack={["Angular", ".NET", "TypeScript", "C#", "PostgreSQL"]}
+          techStack={[
+            "Angular",
+            ".NET",
+            "TypeScript",
+            "C#",
+            "PostgreSQL",
+            "Figma",
+          ]}
           imgSrc={abbeHRISImg}
           altText={abbeExp.position}
-          onABBEClick={onABBEClick}
+          project="ABBE"
         />
         {experiences.map((exp: Experience, idx: number) => (
           <ExperienceCard

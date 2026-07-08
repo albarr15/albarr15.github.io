@@ -1,10 +1,16 @@
+import { ArrowLeft } from "lucide-react";
 import ProjectSectionSpecs from "../ProjectSectionSpecs";
+import { Button } from "../ui/button";
 
 export default function ABBESection() {
   return (
     <>
       <div className="flex flex-col pt-8">
         <section className="flex flex-col gap-10 items-start scroll-mt-24">
+          <Button variant={"outline"}>
+            <ArrowLeft />
+            Go Back{" "}
+          </Button>
           <ProjectSectionSpecs
             startDate={new Date(2026, 3)}
             endDate={new Date(2026, 6)}
@@ -78,12 +84,54 @@ export default function ABBESection() {
                 a weekly schedule editor, both structured around fixed seven-day
                 blocks since schedules in the database were stored per week.
               </p>
-              <div className="w-full max-h-96 h-fit rounded-md shadow-md overflow-hidden">
-                <img
-                  src="src/assets/projects/ABBE/ABBE HRIS/Figma/Schedules.png"
-                  className="object-cover"
-                />
+
+              <div className="text-sm flex flex-col gap-2">
+                <span className="rounded-md bg-muted p-1">
+                  Management's Schedule homepage with a structured table to
+                  allow for easy viewing of schedules per employee in the
+                  selected week.
+                </span>
+
+                <div className="w-full max-h-96 h-fit rounded-md shadow-md overflow-hidden">
+                  <img
+                    src="src/assets/projects/ABBE/ABBE HRIS/Figma/Clicked Week Dropdown.png"
+                    className="object-cover"
+                  />
+                </div>
               </div>
+
+              <div className="text-sm flex flex-col gap-2">
+                <span className="rounded-md bg-muted p-1">
+                  Management's Edit Schedule page displaying the selected
+                  employee and week, along with key details like the schedule
+                  source (Manual, Company Default, or Employee Default) and each
+                  day's start and end time, with rest days styled distinctly
+                  from active days for quick visual differentiation.
+                </span>
+
+                <div className="w-full max-h-96 h-fit rounded-md shadow-md overflow-hidden">
+                  <img
+                    src="src/assets/projects/ABBE/ABBE HRIS/Figma/Edit Schedule.png"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
+              <div className="text-sm flex flex-col gap-2">
+                <span className="rounded-md bg-muted p-1">
+                  Upon submitting the Edit Schedule form, a confirmation dialog
+                  pops up, giving managers a final checkpoint before applying
+                  any schedule changes.
+                </span>
+
+                <div className="w-full max-h-96 h-fit rounded-md shadow-md overflow-hidden">
+                  <img
+                    src="src/assets/projects/ABBE/ABBE HRIS/Figma/Confirm Editing Schedule.png"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+
               <p>
                 While waiting for my alignment meeting with HR, I began
                 implementing the design in Angular to maintain the project's
@@ -187,11 +235,38 @@ export default function ABBESection() {
                 part of the process. It reinforced that good implementation
                 starts with understanding the problem, not the technology.
               </p>
-              <div className="w-full max-h-96 h-fit rounded-md shadow-md overflow-hidden">
-                <img
-                  src="src/assets/projects/ABBE/ABBE HRIS/1.png"
-                  className="object-cover"
-                />
+              <div className="text-sm flex flex-col gap-2">
+                <span className="rounded-md bg-muted p-1">
+                  The redesigned Schedules page supporting multi-week selection
+                  for easier cross-schedule editing. Filters for company,
+                  employee name, and date range streamline data viewing, while
+                  summary cards surface key information including total
+                  employees, schedule records, visible dates, and currently
+                  selected schedules.
+                </span>
+
+                <div className="w-full max-h-96 h-fit rounded-md shadow-md overflow-hidden">
+                  <img
+                    src="src/assets/projects/ABBE/ABBE HRIS/4.png"
+                    className="object-cover"
+                  />
+                </div>
+              </div>
+              <div className="text-sm flex flex-col gap-2">
+                <span className="rounded-md bg-muted p-1">
+                  The redesigned Edit Schedules page features an improved layout
+                  with additional context like the employee's position and
+                  number of weeks being edited. Each week is now grouped within
+                  the form, adding visual structure to what was previously a
+                  flat, hard-to-scan layout.
+                </span>
+
+                <div className="w-full max-h-96 h-fit rounded-md shadow-md overflow-hidden">
+                  <img
+                    src="src/assets/projects/ABBE/ABBE HRIS/2.png"
+                    className="object-cover"
+                  />
+                </div>
               </div>
               <p>
                 Of course, this project wouldn't have been the same without the

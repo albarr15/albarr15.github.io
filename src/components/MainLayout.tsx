@@ -1,5 +1,4 @@
 import DotGrid from "./DotGrid";
-import MobileNavBar from "./MobileNavBar";
 import { Outlet } from "react-router-dom";
 
 export default function MainLayout() {
@@ -21,7 +20,6 @@ export default function MainLayout() {
         />
       </div>
       <div className="min-w-118">
-        <MobileNavBar />
         <div className="px-12 max-w-3xl lg:max-w-7xl mx-auto">
           <Outlet />
         </div>

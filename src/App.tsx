@@ -9,23 +9,24 @@ import ExperiencesSection from "@/components/ExperiencesSection";
 import DotGrid from "@/components/DotGrid";
 import ABBESection from "./components/Sections/ABBESection";
 import { useState, useEffect } from "react";
+import { DetailsSectionContext } from "./contexts/DetailsSectionContext";
 
 function App() {
   const [pendingScroll, setPendingScroll] = useState("");
-  const [showABBESection, setShowABBESection] = useState(false);
+  const [selectedProject, setSelectedProject] = useState("");
 
   useEffect(() => {
-    if (!showABBESection && pendingScroll) {
+    if (selectedProject == "" && pendingScroll) {
       const section = document.getElementById(pendingScroll);
       if (section) {
         section.scrollIntoView();
       }
     }
-  }, [pendingScroll, showABBESection]);
+  }, [pendingScroll, selectedProject]);
 
   const scrollToSection = (id: string) => {
-    if (showDetailSection) {
-      setShowABBESection(false);
+    if (selectedProject != "") {
+      setSelectedProject("");
       window.scrollTo({
         top: 0,
         left: 0,
@@ -42,12 +43,6 @@ function App() {
       section.scrollIntoView();
     }
   };
-
-  const handleShowABBESection = () => {
-    setShowABBESection(true);
-  };
-
-  const showDetailSection = showABBESection ? true : false;
 
   return (
     <>
@@ -111,16 +106,20 @@ function App() {
               </div>
             </aside>
             <main className="py-10 flex flex-col gap-24 pb-77">
-              {!showDetailSection && (
-                <>
-                  <BackgroundSection />
-                  <ExperiencesSection onABBEClick={handleShowABBESection} />
-                  <SkillsTechSection />
-                  <ProjectsSection />
-                </>
-              )}
+              <DetailsSectionContext.Provider
+                value={{ selectedProject, setSelectedProject }}
+              >
+                {selectedProject == "" && (
+                  <>
+                    <BackgroundSection />
+                    <ExperiencesSection />
+                    <SkillsTechSection />
+                    <ProjectsSection />
+                  </>
+                )}
 
-              {showABBESection && <ABBESection />}
+                {selectedProject == "ABBE" && <ABBESection />}
+              </DetailsSectionContext.Provider>
             </main>
           </div>
         </div>
