@@ -5,6 +5,12 @@ import { DetailsSectionContext } from "@/contexts/DetailsSectionContext";
 import { useContext } from "react";
 import { scrollToTop } from "@/utils/Scroll";
 
+import FigmaWeekDropdown from "@/assets/projects/ABBE/ABBE HRIS/Figma/Clicked Week Dropdown.png";
+import FigmaEditSchedule from "@/assets/projects/ABBE/ABBE HRIS/Figma/Edit Schedule.png";
+import FigmaConfirmEdit from "@/assets/projects/ABBE/ABBE HRIS/Figma/Confirm Editing Schedule.png";
+import SchedulesPage from "@/assets/projects/ABBE/ABBE HRIS/4.png";
+import EditSchedulesPage from "@/assets/projects/ABBE/ABBE HRIS/2.png";
+
 export default function ABBESection() {
   const { setSelectedProject } = useContext(DetailsSectionContext);
   return (
@@ -97,10 +103,7 @@ export default function ABBESection() {
                 </span>
 
                 <div className="w-full max-h-96 h-fit rounded-md shadow-md overflow-hidden">
-                  <img
-                    src="src/assets/projects/ABBE/ABBE HRIS/Figma/Clicked Week Dropdown.png"
-                    className="object-cover"
-                  />
+                  <img src={FigmaWeekDropdown} className="object-cover" />
                 </div>
               </div>
 
@@ -114,10 +117,7 @@ export default function ABBESection() {
                 </span>
 
                 <div className="w-full max-h-96 h-fit rounded-md shadow-md overflow-hidden">
-                  <img
-                    src="src/assets/projects/ABBE/ABBE HRIS/Figma/Edit Schedule.png"
-                    className="object-cover"
-                  />
+                  <img src={FigmaEditSchedule} className="object-cover" />
                 </div>
               </div>
 
@@ -129,10 +129,7 @@ export default function ABBESection() {
                 </span>
 
                 <div className="w-full max-h-96 h-fit rounded-md shadow-md overflow-hidden">
-                  <img
-                    src="src/assets/projects/ABBE/ABBE HRIS/Figma/Confirm Editing Schedule.png"
-                    className="object-cover"
-                  />
+                  <img src={FigmaConfirmEdit} className="object-cover" />
                 </div>
               </div>
 
@@ -250,10 +247,7 @@ export default function ABBESection() {
                 </span>
 
                 <div className="w-full max-h-96 h-fit rounded-md shadow-md overflow-hidden">
-                  <img
-                    src="src/assets/projects/ABBE/ABBE HRIS/4.png"
-                    className="object-cover"
-                  />
+                  <img src={SchedulesPage} className="object-cover" />
                 </div>
               </div>
               <div className="text-sm flex flex-col gap-2">
@@ -266,10 +260,7 @@ export default function ABBESection() {
                 </span>
 
                 <div className="w-full max-h-96 h-fit rounded-md shadow-md overflow-hidden">
-                  <img
-                    src="src/assets/projects/ABBE/ABBE HRIS/2.png"
-                    className="object-cover"
-                  />
+                  <img src={EditSchedulesPage} className="object-cover" />
                 </div>
               </div>
               <p>

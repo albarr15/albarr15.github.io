@@ -91,6 +91,10 @@ export default function ProjectCard(props: ProjectCardProps) {
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-2 pointer-events-none h-0 overflow-hidden"
                   }`}
+                  onClick={() => {
+                    setSelectedProject("ABBE");
+                    scrollToTop();
+                  }}
                 >
                   Learn more <ArrowUpRight />
                 </Button>
