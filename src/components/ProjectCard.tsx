@@ -22,9 +22,7 @@ import { scrollToTop } from "@/utils/Scroll";
 export default function ProjectCard(props: ProjectCardProps) {
   const dateRange = DateRange(props.startDate, props.endDate);
   const [isHovered, setIsHovered] = useState(false);
-  const { selectedProject, setSelectedProject } = useContext(
-    DetailsSectionContext,
-  );
+  const { setSelectedProject } = useContext(DetailsSectionContext);
 
   const handleProjectDetailsClick = (project: string) => {
     setSelectedProject(project);

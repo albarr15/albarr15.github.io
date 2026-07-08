@@ -6,9 +6,7 @@ import { useContext } from "react";
 import { scrollToTop } from "@/utils/Scroll";
 
 export default function ABBESection() {
-  const { selectedProject, setSelectedProject } = useContext(
-    DetailsSectionContext,
-  );
+  const { setSelectedProject } = useContext(DetailsSectionContext);
   return (
     <>
       <div className="flex flex-col pt-8">
