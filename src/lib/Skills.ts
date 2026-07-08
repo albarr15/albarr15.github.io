@@ -21,6 +21,8 @@ import TailwindCSSLogo from "@/assets/logos/colored/icons8-tailwind-css.svg";
 import TypeScriptLogo from "@/assets/logos/colored/icons8-typescript.svg";
 import VSCodeLogo from "@/assets/logos/colored/icons8-visual-studio-code-2019.svg";
 import VueLogo from "@/assets/logos/colored/icons8-vue-js.svg";
+import AngularLogo from "@/assets/logos/colored/icons8-angularjs.svg";
+import NetLogo from "@/assets/logos/colored/dotnet.svg";
 
 import BootstrapLogoMono from "@/assets/logos/mono/icons8-bootstrap.svg";
 import CLogoMono from "@/assets/logos/mono/icons8-c-programming.svg";
@@ -45,6 +47,8 @@ import TailwindCSSLogoMono from "@/assets/logos/mono/icons8-tailwind-css.svg";
 import TypeScriptLogoMono from "@/assets/logos/mono/icons8-typescript.svg";
 import VSCodeLogoMono from "@/assets/logos/mono/icons8-visual-studio-code-2019.svg";
 import VueLogoMono from "@/assets/logos/mono/icons8-vue-js.svg";
+import AngularLogoMono from "@/assets/logos/mono/icons8-angularjs.svg";
+import NetLogoMono from "@/assets/logos/mono/dotnet-mono.svg";
 
 export default [
   {
@@ -53,16 +57,20 @@ export default [
     iconMono: JavaScriptLogoMono,
   },
   {
+    name: "TypeScript",
+    icon: TypeScriptLogo,
+    iconMono: TypeScriptLogoMono,
+  },
+  {
     name: "React",
     icon: ReactLogo,
     iconMono: ReactLogoMono,
   },
   {
-    name: "TypeScript",
-    icon: TypeScriptLogo,
-    iconMono: TypeScriptLogoMono,
+    name: "Angular",
+    icon: AngularLogo,
+    iconMono: AngularLogoMono,
   },
-
   {
     name: "Vue",
     icon: VueLogo,
@@ -72,6 +80,11 @@ export default [
     name: "Node.js",
     icon: NodeJSLogo,
     iconMono: NodeJSLogoMono,
+  },
+  {
+    name: ".NET",
+    icon: NetLogo,
+    iconMono: NetLogoMono,
   },
   {
     name: "HTML5",

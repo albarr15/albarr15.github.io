@@ -6,21 +6,46 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
+import { scrollToTop } from "@/utils/Scroll";
+import { useContext, useEffect, useState } from "react";
+import { DetailsSectionContext } from "@/contexts/DetailsSectionContext";
 
 export default function MobileNavBar() {
+  const [pendingScroll, setPendingScroll] = useState("");
+  const { selectedProject, setSelectedProject } = useContext(
+    DetailsSectionContext,
+  );
+
+  useEffect(() => {
+    if (selectedProject == "" && pendingScroll) {
+      setTimeout(() => {
+        const section = document.getElementById(pendingScroll);
+        if (section) {
+          section.scrollIntoView();
+        }
+      }, 200);
+    }
+  }, [pendingScroll, selectedProject]);
+
   const scrollToSection = (id: string) => {
+    if (selectedProject != "") {
+      setSelectedProject("");
+      scrollToTop();
+
+      // indicate for pending scrolls to main sections by their ids
+      setPendingScroll(id);
+      return;
+    }
+
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView();
     }
   };
 
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0 });
-  };
   return (
     <>
-      <nav className="100dvw px-12 flex justify-between sticky top-0 z-50 bg-background/30 backdrop-blur-sm h-16 items-center md:hidden">
+      <nav className="100dvw px-12 flex justify-between sticky top-0 z-50 bg-background/30 backdrop-blur-sm h-16 items-center lg:hidden">
         <div onClick={() => scrollToTop()} className="cursor-pointer">
           clarissa<span className="font-bold">albarr</span>
         </div>
@@ -29,20 +54,17 @@ export default function MobileNavBar() {
             <Menu />
           </DropdownMenuTrigger>
           <DropdownMenuContent align="end">
-            <DropdownMenuItem onClick={() => scrollToTop()}>
-              Main
-            </DropdownMenuItem>
             <DropdownMenuItem onClick={() => scrollToSection("background")}>
               Background
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => scrollToSection("experiences")}>
+              Experiences
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => scrollToSection("skills")}>
               Skills & Technologies
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => scrollToSection("projects")}>
               Projects
-            </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => scrollToSection("experiences")}>
-              Experiences
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

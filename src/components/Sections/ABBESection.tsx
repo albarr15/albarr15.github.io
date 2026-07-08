@@ -1,15 +1,21 @@
-import { ArrowLeft } from "lucide-react";
+import { ArrowLeft, ArrowUp } from "lucide-react";
 import ProjectSectionSpecs from "../ProjectSectionSpecs";
 import { Button } from "../ui/button";
+import { DetailsSectionContext } from "@/contexts/DetailsSectionContext";
+import { useContext } from "react";
+import { scrollToTop } from "@/utils/Scroll";
 
 export default function ABBESection() {
+  const { selectedProject, setSelectedProject } = useContext(
+    DetailsSectionContext,
+  );
   return (
     <>
       <div className="flex flex-col pt-8">
         <section className="flex flex-col gap-10 items-start scroll-mt-24">
-          <Button variant={"outline"}>
+          <Button variant={"outline"} onClick={() => setSelectedProject("")}>
             <ArrowLeft />
-            Go Back{" "}
+            Go Back
           </Button>
           <ProjectSectionSpecs
             startDate={new Date(2026, 3)}
@@ -278,6 +284,14 @@ export default function ABBESection() {
               </p>
             </div>
           </div>
+          <Button
+            variant={"outline"}
+            onClick={() => scrollToTop()}
+            className="w-full"
+          >
+            <ArrowUp />
+            Go Back to Top
+          </Button>
         </section>
       </div>
     </>

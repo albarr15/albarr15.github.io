@@ -10,6 +10,9 @@ import DotGrid from "@/components/DotGrid";
 import ABBESection from "./components/Sections/ABBESection";
 import { useState, useEffect } from "react";
 import { DetailsSectionContext } from "./contexts/DetailsSectionContext";
+import { scrollToTop } from "./utils/Scroll";
+import { ArrowUp } from "lucide-react";
+import { Button } from "./components/ui/button";
 
 function App() {
   const [pendingScroll, setPendingScroll] = useState("");
@@ -27,11 +30,7 @@ function App() {
   const scrollToSection = (id: string) => {
     if (selectedProject != "") {
       setSelectedProject("");
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "smooth",
-      });
+      scrollToTop();
 
       // indicate for pending scrolls to main sections by their ids
       setPendingScroll(id);
@@ -61,69 +60,77 @@ function App() {
           returnDuration={2.9}
         />
       </div>
-      <div className="min-w-118">
-        <MobileNavBar />
-        <div className="px-12 max-w-3xl lg:max-w-7xl mx-auto">
-          <div className="gap-3 flex flex-col lg:flex-row lg:gap-12">
-            <aside className="lg:w-1/3 lg:shrink-0 lg:sticky lg:h-screen lg:top-0">
-              <div className="lg:h-screen lg:justify-center lg:py-0 flex flex-col">
-                <MainSection />
-                <hr />
-                <div className="hidden lg:flex lg:flex-col lg:items-start lg:gap-6 lg:mt-12">
-                  <button
-                    onClick={() => scrollToSection("background")}
-                    className="relative fit-content hover:after:absolute hover:after:bg-accent
+      <DetailsSectionContext.Provider
+        value={{ selectedProject, setSelectedProject }}
+      >
+        <div className="min-w-118">
+          <MobileNavBar />
+          <div className="px-12 max-w-3xl lg:max-w-7xl mx-auto">
+            <div className="gap-3 flex flex-col lg:flex-row lg:gap-12">
+              <aside className="lg:w-1/3 lg:shrink-0 lg:sticky lg:h-screen lg:top-0">
+                <div className="lg:h-screen lg:justify-center lg:py-0 flex flex-col">
+                  <MainSection />
+                  <hr />
+                  <div className="hidden lg:flex lg:flex-col lg:items-start lg:gap-6 lg:mt-12">
+                    <button
+                      onClick={() => scrollToSection("background")}
+                      className="relative fit-content hover:after:absolute hover:after:bg-accent
                   hover:after:inset-0 hover:after:-z-10 hover:px-4 hover:font-bold py-1
                   transition-all duration-300"
-                  >
-                    Background
-                  </button>
-                  <button
-                    onClick={() => scrollToSection("experiences")}
-                    className="relative fit-content hover:after:absolute hover:after:bg-accent
+                    >
+                      Background
+                    </button>
+                    <button
+                      onClick={() => scrollToSection("experiences")}
+                      className="relative fit-content hover:after:absolute hover:after:bg-accent
                   hover:after:inset-0 hover:after:-z-10 hover:px-4 hover:font-bold py-1
                   transition-all duration-300"
-                  >
-                    Experiences
-                  </button>
-                  <button
-                    onClick={() => scrollToSection("skills")}
-                    className="relative fit-content hover:after:absolute hover:after:bg-accent
+                    >
+                      Experiences
+                    </button>
+                    <button
+                      onClick={() => scrollToSection("skills")}
+                      className="relative fit-content hover:after:absolute hover:after:bg-accent
                   hover:after:inset-0 hover:after:-z-10 hover:px-4 hover:font-bold py-1
                   transition-all duration-300"
-                  >
-                    Skills & Technologies
-                  </button>
-                  <button
-                    onClick={() => scrollToSection("projects")}
-                    className="relative fit-content hover:after:absolute hover:after:bg-accent
+                    >
+                      Skills & Technologies
+                    </button>
+                    <button
+                      onClick={() => scrollToSection("projects")}
+                      className="relative fit-content hover:after:absolute hover:after:bg-accent
                   hover:after:inset-0 hover:after:-z-10 hover:px-4 hover:font-bold py-1
                   transition-all duration-300"
-                  >
-                    Projects
-                  </button>
+                    >
+                      Projects
+                    </button>
+                  </div>
                 </div>
-              </div>
-            </aside>
-            <main className="py-10 flex flex-col gap-24 pb-77">
-              <DetailsSectionContext.Provider
-                value={{ selectedProject, setSelectedProject }}
-              >
+              </aside>
+              <main className="py-10 flex flex-col gap-24 pb-77">
                 {selectedProject == "" && (
                   <>
                     <BackgroundSection />
                     <ExperiencesSection />
                     <SkillsTechSection />
                     <ProjectsSection />
+                    <Button
+                      variant={"outline"}
+                      onClick={() => scrollToTop()}
+                      className="w-full"
+                    >
+                      <ArrowUp />
+                      Go Back to Top
+                    </Button>
                   </>
                 )}
 
                 {selectedProject == "ABBE" && <ABBESection />}
-              </DetailsSectionContext.Provider>
-            </main>
+              </main>
+            </div>
           </div>
         </div>
-      </div>
+      </DetailsSectionContext.Provider>
     </>
   );
 }

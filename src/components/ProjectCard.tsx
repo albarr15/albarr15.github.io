@@ -17,6 +17,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { useContext, useState } from "react";
 import { DetailsSectionContext } from "@/contexts/DetailsSectionContext";
+import { scrollToTop } from "@/utils/Scroll";
 
 export default function ProjectCard(props: ProjectCardProps) {
   const dateRange = DateRange(props.startDate, props.endDate);
@@ -27,11 +28,7 @@ export default function ProjectCard(props: ProjectCardProps) {
 
   const handleProjectDetailsClick = (project: string) => {
     setSelectedProject(project);
-    window.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "smooth",
-    });
+    scrollToTop();
   };
 
   return (
