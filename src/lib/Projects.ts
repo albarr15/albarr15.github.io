@@ -8,7 +8,6 @@ export type Project = {
   techStack: string[];
   imgSrc?: string;
   altText: string;
-  pageLink: string;
 };
 import typrtxtImg from "@/assets/projects/Typing Practice Site 1.png";
 import shizImg from "@/assets/projects/Distributed Enrollment System 1.png";
@@ -34,7 +33,6 @@ export function Projects(): Project[] {
     ],
     imgSrc: typrtxtImg,
     altText: "typrtxt: Typing Practice Site using Classic Literature",
-    pageLink: "/typrtxt",
   };
 
   const shizProject: Project = {
@@ -57,7 +55,6 @@ export function Projects(): Project[] {
     ],
     imgSrc: shizImg,
     altText: "Shiz University: Distributed Enrollment System",
-    pageLink: "/shiz",
   };
 
   const whfProject: Project = {
@@ -73,7 +70,6 @@ export function Projects(): Project[] {
     imgSrc: whfImg,
     altText:
       "What Haffen Fella? : Emotion Detection in Journal Entries with Meme-based Feedback in Filipino",
-    pageLink: "/what_haffen_fella",
   };
 
   projects.push(typrtxtProject);

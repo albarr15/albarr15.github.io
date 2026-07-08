@@ -27,10 +27,17 @@ export default function ExperiencesSection() {
           endDate={abbeExp.endDate}
           title={abbeExp.position}
           desc={abbeExp.desc}
-          techStack={["Angular", ".NET", "TypeScript", "C#", "PostgreSQL"]}
+          techStack={[
+            "Angular",
+            ".NET",
+            "TypeScript",
+            "C#",
+            "PostgreSQL",
+            "Figma",
+          ]}
           imgSrc={abbeHRISImg}
           altText={abbeExp.position}
-          pageLink="/abbe"
+          project="ABBE"
         />
         {experiences.map((exp: Experience, idx: number) => (
           <ExperienceCard

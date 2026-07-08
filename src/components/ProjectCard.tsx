@@ -1,26 +1,35 @@
-type ProjectCardProps = {
+export interface ProjectCardProps {
   startDate: Date;
   endDate: Date;
   title: string;
   desc: string;
   liveLink?: string;
   repoLink?: string;
-  pageLink: string;
   techStack: string[];
   imgSrc?: string;
   altText: string;
-};
+  project?: string;
+}
 
 import { DateRange } from "@/lib/DateRange";
 import { ArrowUpRight, Globe, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import { DetailsSectionContext } from "@/contexts/DetailsSectionContext";
+import { scrollToTop } from "@/utils/Scroll";
 
 export default function ProjectCard(props: ProjectCardProps) {
   const dateRange = DateRange(props.startDate, props.endDate);
   const [isHovered, setIsHovered] = useState(false);
+  const { selectedProject, setSelectedProject } = useContext(
+    DetailsSectionContext,
+  );
+
+  const handleProjectDetailsClick = (project: string) => {
+    setSelectedProject(project);
+    scrollToTop();
+  };
 
   return (
     <div className="flex flex-col gap-6">
@@ -36,7 +45,12 @@ export default function ProjectCard(props: ProjectCardProps) {
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
           >
-            <Link to={props.pageLink} className="absolute inset-0 z-20"></Link>
+            {props.project && (
+              <div
+                className="absolute inset-0 z-20 cursor-pointer"
+                onClick={() => handleProjectDetailsClick("ABBE")}
+              ></div>
+            )}
             <div className="absolute inset-0 bg-background/30 z-10"></div>
             <img
               src={props.imgSrc}
@@ -75,7 +89,7 @@ export default function ProjectCard(props: ProjectCardProps) {
                   variant="outline"
                   size="sm"
                   className={`self-start transition-all duration-300 ${
-                    isHovered
+                    isHovered && props.project
                       ? "opacity-100 translate-y-0"
                       : "opacity-0 translate-y-2 pointer-events-none h-0 overflow-hidden"
                   }`}

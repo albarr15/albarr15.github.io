@@ -17,8 +17,8 @@ export default function MainSection() {
           I'm <span className="font-bold">Clarissa Albarracin</span>,
         </div>
         <p>
-          an aspiring front-end developer based in Pasig City, PH bridging
-          design and development to build polished, intuitive web experiences.
+          a frontend developer with a UX mindset, bridging design and code to
+          build polished and intuitive web experiences.
         </p>
       </section>
 
