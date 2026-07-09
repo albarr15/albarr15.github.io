@@ -1,4 +1,4 @@
-import { Menu } from "lucide-react";
+import { Ghost, Menu } from "lucide-react";
 
 import {
   DropdownMenu,
@@ -9,6 +9,8 @@ import {
 import { scrollToTop } from "@/utils/Scroll";
 import { useContext, useEffect, useState } from "react";
 import { DetailsSectionContext } from "@/contexts/DetailsSectionContext";
+import Signature from "@/assets/Signature.svg";
+import { Button } from "./ui/button";
 
 export default function MobileNavBar() {
   const [pendingScroll, setPendingScroll] = useState("");
@@ -23,6 +25,7 @@ export default function MobileNavBar() {
         if (section) {
           section.scrollIntoView();
         }
+        setPendingScroll("");
       }, 200);
     }
   }, [pendingScroll, selectedProject]);
@@ -46,8 +49,10 @@ export default function MobileNavBar() {
   return (
     <>
       <nav className="100dvw px-12 flex justify-between sticky top-0 z-50 bg-background/30 backdrop-blur-sm h-16 items-center lg:hidden">
-        <div onClick={() => scrollToTop()} className="cursor-pointer">
-          clarissa<span className="font-bold">albarr</span>
+        <div onClick={() => scrollToTop()} className="cursor-pointer ">
+          <Button variant={"ghost"} className="h-fit">
+            <img src={Signature} className="h-11" />
+          </Button>
         </div>
         <DropdownMenu>
           <DropdownMenuTrigger>
@@ -60,11 +65,11 @@ export default function MobileNavBar() {
             <DropdownMenuItem onClick={() => scrollToSection("experiences")}>
               Experiences
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => scrollToSection("skills")}>
-              Skills & Technologies
-            </DropdownMenuItem>
             <DropdownMenuItem onClick={() => scrollToSection("projects")}>
               Projects
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => scrollToSection("skills")}>
+              Skills & Technologies
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>

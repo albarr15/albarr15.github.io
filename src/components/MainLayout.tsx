@@ -1,7 +1,12 @@
 import DotGrid from "./DotGrid";
 import { Outlet } from "react-router-dom";
+import MobileNavBar from "./MobileNavBar";
+import { DetailsSectionContext } from "@/contexts/DetailsSectionContext";
+import { useState } from "react";
 
 export default function MainLayout() {
+  const [selectedProject, setSelectedProject] = useState("");
+
   return (
     <>
       <div className="fixed inset-0 -z-30">
@@ -19,11 +24,16 @@ export default function MainLayout() {
           returnDuration={2.9}
         />
       </div>
-      <div className="min-w-118">
-        <div className="px-12 max-w-3xl lg:max-w-7xl mx-auto">
-          <Outlet />
+      <DetailsSectionContext.Provider
+        value={{ selectedProject, setSelectedProject }}
+      >
+        <div className="min-w-118">
+          <MobileNavBar />
+          <div className="px-12 max-w-3xl lg:max-w-7xl mx-auto">
+            <Outlet />
+          </div>
         </div>
-      </div>
+      </DetailsSectionContext.Provider>
     </>
   );
 }

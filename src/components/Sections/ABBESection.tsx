@@ -17,30 +17,36 @@ export default function ABBESection() {
     <>
       <div className="flex flex-col pt-8">
         <section className="flex flex-col gap-10 items-start scroll-mt-24">
-          <Button variant={"outline"} onClick={() => setSelectedProject("")}>
+          <Button
+            variant={"outline"}
+            onClick={() => setSelectedProject("")}
+            className="autoShow"
+          >
             <ArrowLeft />
             Go Back
           </Button>
-          <ProjectSectionSpecs
-            startDate={new Date(2026, 3)}
-            endDate={new Date(2026, 6)}
-            title="Web Development and UI/UX Design Intern"
-            desc="Built and shipped the Work Schedules feature for an HRIS platform using Angular and .NET, integrating RESTful APIs for CRUD operations, custom date-range filtering, and multi-schedule editing across admin and employee views"
-            techStack={["Angular", ".NET", "TypeScript", "C#", "PostgreSQL"]}
-            tools={[
-              "WebStorm",
-              "Rider",
-              "Figma",
-              "Postman",
-              "DBeaver",
-              "Docker",
-            ]}
-            altText="Web Development and UI/UX Intern"
-            projectType="Enterprise Web Application (HRIS)"
-            companyName="ABBE Technology Solutions, Inc."
-          />
+          <div className="autoShow">
+            <ProjectSectionSpecs
+              startDate={new Date(2026, 3)}
+              endDate={new Date(2026, 6)}
+              title="Web Development and UI/UX Design Intern"
+              desc="Built and shipped the Work Schedules feature for an HRIS platform using Angular and .NET, integrating RESTful APIs for CRUD operations, custom date-range filtering, and multi-schedule editing across admin and employee views"
+              techStack={["Angular", ".NET", "TypeScript", "C#", "PostgreSQL"]}
+              tools={[
+                "WebStorm",
+                "Rider",
+                "Figma",
+                "Postman",
+                "DBeaver",
+                "Docker",
+              ]}
+              altText="Web Development and UI/UX Intern"
+              projectType="Enterprise Web Application (HRIS)"
+              companyName="ABBE Technology Solutions, Inc."
+            />
+          </div>
 
-          <div>
+          <div className="autoShow">
             <span className="pb-5 font-medium">The Problem</span>
             <div className="text-sm flex flex-col gap-6 text-justify text-muted-foreground">
               <p>
@@ -55,7 +61,7 @@ export default function ABBESection() {
             </div>
           </div>
 
-          <div>
+          <div className="autoShow">
             <span className="pb-5 font-medium">
               Understanding the Project Requirements
             </span>
@@ -77,7 +83,7 @@ export default function ABBESection() {
             </div>
           </div>
 
-          <div>
+          <div className="autoShow">
             <span className="pb-5 font-medium">Design Challenges</span>
             <div className="text-sm flex flex-col gap-6 text-justify text-muted-foreground">
               <p>
@@ -95,7 +101,7 @@ export default function ABBESection() {
                 blocks since schedules in the database were stored per week.
               </p>
 
-              <div className="text-sm flex flex-col gap-2">
+              <div className="text-sm flex flex-col gap-2 autoShow">
                 <span className="rounded-md bg-muted p-1">
                   Management's Schedule homepage with a structured table to
                   allow for easy viewing of schedules per employee in the
@@ -107,7 +113,7 @@ export default function ABBESection() {
                 </div>
               </div>
 
-              <div className="text-sm flex flex-col gap-2">
+              <div className="text-sm flex flex-col gap-2 autoShow">
                 <span className="rounded-md bg-muted p-1">
                   Management's Edit Schedule page displaying the selected
                   employee and week, along with key details like the schedule
@@ -121,7 +127,7 @@ export default function ABBESection() {
                 </div>
               </div>
 
-              <div className="text-sm flex flex-col gap-2">
+              <div className="text-sm flex flex-col gap-2 autoShow">
                 <span className="rounded-md bg-muted p-1">
                   Upon submitting the Edit Schedule form, a confirmation dialog
                   pops up, giving managers a final checkpoint before applying
@@ -143,7 +149,7 @@ export default function ABBESection() {
             </div>
           </div>
 
-          <div>
+          <div className="autoShow">
             <span className="pb-5 font-medium">The Pivot</span>
             <div className="text-sm flex flex-col gap-6 text-justify text-muted-foreground">
               <p>
@@ -164,7 +170,7 @@ export default function ABBESection() {
             </div>
           </div>
 
-          <div>
+          <div className="autoShow">
             <span className="pb-5 font-medium">Building It Out</span>
             <div className="text-sm flex flex-col gap-6 text-justify text-muted-foreground">
               <p>
@@ -199,7 +205,7 @@ export default function ABBESection() {
             </div>
           </div>
 
-          <div>
+          <div className="autoShow">
             <span className="pb-5 font-medium">Testing</span>
             <div className="text-sm flex flex-col gap-6 text-justify text-muted-foreground">
               <p>
@@ -222,7 +228,7 @@ export default function ABBESection() {
             </div>
           </div>
 
-          <div>
+          <div className="autoShow">
             <span className="pb-5 font-medium">My Takeaway</span>
             <div className="text-sm flex flex-col gap-6 text-justify text-muted-foreground">
               <p>
@@ -236,7 +242,7 @@ export default function ABBESection() {
                 part of the process. It reinforced that good implementation
                 starts with understanding the problem, not the technology.
               </p>
-              <div className="text-sm flex flex-col gap-2">
+              <div className="text-sm flex flex-col gap-2 autoShow">
                 <span className="rounded-md bg-muted p-1">
                   The redesigned Schedules page supporting multi-week selection
                   for easier cross-schedule editing. Filters for company,
@@ -250,7 +256,7 @@ export default function ABBESection() {
                   <img src={SchedulesPage} className="object-cover" />
                 </div>
               </div>
-              <div className="text-sm flex flex-col gap-2">
+              <div className="text-sm flex flex-col gap-2 autoShow">
                 <span className="rounded-md bg-muted p-1">
                   The redesigned Edit Schedules page features an improved layout
                   with additional context like the employee's position and
@@ -276,7 +282,7 @@ export default function ABBESection() {
           <Button
             variant={"outline"}
             onClick={() => scrollToTop()}
-            className="w-full"
+            className="w-full autoShow"
           >
             <ArrowUp />
             Go Back to Top
