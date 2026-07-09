@@ -8,6 +8,8 @@ import { scrollToTop } from "@/utils/Scroll";
 import FigmaWeekDropdown from "@/assets/projects/ABBE/ABBE HRIS/Figma/Clicked Week Dropdown.png";
 import FigmaEditSchedule from "@/assets/projects/ABBE/ABBE HRIS/Figma/Edit Schedule.png";
 import FigmaConfirmEdit from "@/assets/projects/ABBE/ABBE HRIS/Figma/Confirm Editing Schedule.png";
+import FigmaEmployeeSchedule from "@/assets/projects/ABBE/ABBE HRIS/Figma/AccountClicked Week Dropdown.png";
+
 import SchedulesPage from "@/assets/projects/ABBE/ABBE HRIS/4.png";
 import EditSchedulesPage from "@/assets/projects/ABBE/ABBE HRIS/2.png";
 
@@ -100,6 +102,17 @@ export default function ABBESection() {
                 a weekly schedule editor, both structured around fixed seven-day
                 blocks since schedules in the database were stored per week.
               </p>
+
+              <div className="text-sm flex flex-col gap-2 autoShow">
+                <span className="rounded-md bg-muted p-1">
+                  The Schedule homepage for each employee for viewing their
+                  weekly schedules.
+                </span>
+
+                <div className="w-full max-h-96 h-fit rounded-md shadow-md overflow-hidden">
+                  <img src={FigmaEmployeeSchedule} className="object-cover" />
+                </div>
+              </div>
 
               <div className="text-sm flex flex-col gap-2 autoShow">
                 <span className="rounded-md bg-muted p-1">
