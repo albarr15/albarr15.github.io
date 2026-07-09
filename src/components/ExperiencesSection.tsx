@@ -22,23 +22,26 @@ export default function ExperiencesSection() {
   return (
     <SectionWrapper id="experiences" title="Experiences">
       <div className="flex flex-col gap-8">
-        <ProjectCard
-          startDate={abbeExp.startDate}
-          endDate={abbeExp.endDate}
-          title={abbeExp.position}
-          desc={abbeExp.desc}
-          techStack={[
-            "Angular",
-            ".NET",
-            "TypeScript",
-            "C#",
-            "PostgreSQL",
-            "Figma",
-          ]}
-          imgSrc={abbeHRISImg}
-          altText={abbeExp.position}
-          project="ABBE"
-        />
+        <div className="autoShow">
+          <ProjectCard
+            startDate={abbeExp.startDate}
+            endDate={abbeExp.endDate}
+            title={abbeExp.position}
+            desc={abbeExp.desc}
+            techStack={[
+              "Angular",
+              ".NET",
+              "TypeScript",
+              "C#",
+              "PostgreSQL",
+              "Figma",
+            ]}
+            imgSrc={abbeHRISImg}
+            altText={abbeExp.position}
+            project="ABBE"
+          />
+        </div>
+
         {experiences.map((exp: Experience, idx: number) => (
           <ExperienceCard
             key={idx}
@@ -46,6 +49,7 @@ export default function ExperiencesSection() {
             endDate={exp.endDate}
             position={exp.position}
             desc={exp.desc}
+            className="autoShow"
           />
         ))}
       </div>

@@ -9,6 +9,7 @@ export interface ProjectCardProps {
   imgSrc?: string;
   altText: string;
   project?: string;
+  className?: string;
 }
 
 import { DateRange } from "@/lib/DateRange";
@@ -30,7 +31,7 @@ export default function ProjectCard(props: ProjectCardProps) {
   };
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className={`flex flex-col gap-6 ${props.className ?? ""}`}>
       <div className="flex flex-col gap-3">
         <div>
           <span className="text-muted-foreground uppercase font-semibold">
@@ -77,7 +78,7 @@ export default function ProjectCard(props: ProjectCardProps) {
                       />
                     </a>
                   ) : (
-                    <span className="font-semibold text-lg/snug hover:text-primary hover:underline">
+                    <span className="font-semibold text-lg/snug">
                       {props.title}
                     </span>
                   )}

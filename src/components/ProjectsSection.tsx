@@ -22,6 +22,7 @@ export default function ProjectsSection() {
             techStack={project.techStack}
             imgSrc={project.imgSrc}
             altText={project.altText}
+            className="autoShow"
           />
         ))}
       </div>

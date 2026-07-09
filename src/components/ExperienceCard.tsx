@@ -3,6 +3,7 @@ export type ExperienceCardProps = {
   endDate: Date;
   position: string;
   desc: string;
+  className?: string;
 };
 
 import { DateRange } from "@/lib/DateRange";
@@ -11,7 +12,7 @@ export default function ExperienceCard(props: ExperienceCardProps) {
   const dateRange = DateRange(props.startDate, props.endDate);
 
   return (
-    <div className="flex flex-col gap-6">
+    <div className={`flex flex-col gap-6 ${props.className ?? ""}`}>
       <div className="flex flex-col gap-2">
         <div>
           <div>
