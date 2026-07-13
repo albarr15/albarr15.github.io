@@ -1,20 +1,57 @@
-export type Project = {
+export interface Project {
   startDate: Date;
   endDate: Date;
   title: string;
   desc: string;
   liveLink?: string;
   repoLink?: string;
-  techStack: string[];
+  techStack?: string[];
   imgSrc?: string;
   altText: string;
-};
-import typrtxtImg from "@/assets/projects/Typing Practice Site 1.png";
-import shizImg from "@/assets/projects/Distributed Enrollment System 1.png";
-import whfImg from "@/assets/projects/What Haffen Fella 1.png";
+  project?: string;
+  projectType?: string;
+  companyName?: string;
+  tools?: string[];
+}
+
+import typrtxtImg from "@/assets/projects/594_1x_shots_so.png";
+import shizImg from "@/assets/projects/826_1x_shots_so.png";
+import whfImg from "@/assets/projects/48_1x_shots_so.png";
+import bequikImg from "@/assets/projects/Bequik/951_1x_shots_so.png";
+import abbeHRISImg from "@/assets/projects/ABBE/871_1x_shots_so.png";
 
 export function Projects(): Project[] {
   let projects = new Array<Project>();
+
+  const bequikProject: Project = {
+    startDate: new Date(2026, 5),
+    endDate: new Date(2026, 5),
+    title: "Content Expansion of the Bequik Website",
+    desc: "Explored and designed additional pages for Bequik's website to expand the site beyond a single landing page while staying consistent with the existing design.",
+    tools: ["Figma"],
+    altText: "Content Expansion of the Bequik Website",
+    projectType: "User Interface & User Experience (UI&UX) Design ",
+    companyName: "Bequik Information Solutions",
+    imgSrc: bequikImg,
+    project: "Bequik",
+  };
+
+  const abbeProject: Project = {
+    startDate: new Date(2026, 3),
+    endDate: new Date(2026, 5),
+    title: "Designing and Developing the ABBE HRIS' Work Schedules feature",
+    desc:
+      "Built and shipped the Work Schedules feature for an HRIS platform using Angular and .NET, integrating " +
+      "RESTful APIs for CRUD operations, custom date-range filtering, and multi-schedule editing across admin " +
+      "and employee views.",
+    techStack: ["Angular", ".NET", "TypeScript", "C#", "PostgreSQL", "Figma"],
+    tools: ["WebStorm", "Rider", "Figma", "Postman", "DBeaver", "Docker"],
+    altText: "Designing and Developing the ABBE HRIS' Work Schedules feature",
+    projectType: "Enterprise Web Application (HRIS)",
+    companyName: "ABBE Technology Solutions, Inc.",
+    imgSrc: abbeHRISImg,
+    project: "ABBE",
+  };
 
   const typrtxtProject: Project = {
     startDate: new Date(2025, 8),
@@ -72,6 +109,8 @@ export function Projects(): Project[] {
       "What Haffen Fella? : Emotion Detection in Journal Entries with Meme-based Feedback in Filipino",
   };
 
+  projects.push(abbeProject);
+  projects.push(bequikProject);
   projects.push(typrtxtProject);
   projects.push(shizProject);
   projects.push(whfProject);

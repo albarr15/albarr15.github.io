@@ -9,7 +9,6 @@ import FigmaWeekDropdown from "@/assets/projects/ABBE/ABBE HRIS/Figma/Clicked We
 import FigmaEditSchedule from "@/assets/projects/ABBE/ABBE HRIS/Figma/Edit Schedule.png";
 import FigmaConfirmEdit from "@/assets/projects/ABBE/ABBE HRIS/Figma/Confirm Editing Schedule.png";
 import FigmaEmployeeSchedule from "@/assets/projects/ABBE/ABBE HRIS/Figma/AccountClicked Week Dropdown.png";
-
 import SchedulesPage from "@/assets/projects/ABBE/ABBE HRIS/4.png";
 import EditSchedulesPage from "@/assets/projects/ABBE/ABBE HRIS/2.png";
 
@@ -110,7 +109,7 @@ export default function ABBESection() {
                 </span>
 
                 <div className="w-full max-h-96 h-fit rounded-md shadow-md overflow-hidden">
-                  <img src={FigmaEmployeeSchedule} className="object-cover" />
+                  <img src={FigmaEmployeeSchedule} className="object-cover " />
                 </div>
               </div>
 

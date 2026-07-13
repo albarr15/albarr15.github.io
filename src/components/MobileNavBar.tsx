@@ -62,14 +62,14 @@ export default function MobileNavBar() {
             <DropdownMenuItem onClick={() => scrollToSection("background")}>
               Background
             </DropdownMenuItem>
-            <DropdownMenuItem onClick={() => scrollToSection("experiences")}>
-              Experiences
-            </DropdownMenuItem>
             <DropdownMenuItem onClick={() => scrollToSection("projects")}>
               Projects
             </DropdownMenuItem>
             <DropdownMenuItem onClick={() => scrollToSection("skills")}>
               Skills & Technologies
+            </DropdownMenuItem>
+            <DropdownMenuItem onClick={() => scrollToSection("experiences")}>
+              Experiences
             </DropdownMenuItem>
           </DropdownMenuContent>
         </DropdownMenu>
