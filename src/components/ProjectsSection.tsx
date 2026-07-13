@@ -6,7 +6,6 @@ import type { Project } from "@/lib/Projects";
 
 export default function ProjectsSection() {
   const projects: Project[] = Projects();
-
   return (
     <SectionWrapper id="projects" title="Projects">
       <div className="flex flex-col gap-14">
@@ -22,6 +21,10 @@ export default function ProjectsSection() {
             techStack={project.techStack}
             imgSrc={project.imgSrc}
             altText={project.altText}
+            project={project.project}
+            projectType={project.projectType}
+            companyName={project.companyName}
+            tools={project.tools}
             className="autoShow"
           />
         ))}

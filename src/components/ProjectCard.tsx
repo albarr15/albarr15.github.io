@@ -1,17 +1,8 @@
-export interface ProjectCardProps {
-  startDate: Date;
-  endDate: Date;
-  title: string;
-  desc: string;
-  liveLink?: string;
-  repoLink?: string;
-  techStack: string[];
-  imgSrc?: string;
-  altText: string;
-  project?: string;
+export interface ProjectCardProps extends Project {
   className?: string;
 }
 
+import { type Project } from "@/lib/Projects";
 import { DateRange } from "@/lib/DateRange";
 import { ArrowUpRight, Globe, Github } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -47,17 +38,21 @@ export default function ProjectCard(props: ProjectCardProps) {
             {props.project && (
               <div
                 className="absolute inset-0 z-20 cursor-pointer"
-                onClick={() => handleProjectDetailsClick("ABBE")}
+                onClick={() => {
+                  if (props.project) {
+                    handleProjectDetailsClick(props.project);
+                  }
+                }}
               ></div>
             )}
-            <div className="absolute inset-0 bg-background/30 z-10"></div>
+            <div className="absolute inset-0 bg-background/10 z-10"></div>
             <img
               src={props.imgSrc}
               alt={props.altText}
               className={`shadow-md ${isHovered ? "scale-105 transition duration-300" : "scale-100 transition duration-300"}`}
             />
             <div className="absolute bottom-0 left-0 z-30">
-              <div className="flex flex-col gap-2 bg-linear-to-t from-background via-background/80 to-transparent p-3">
+              <div className="flex flex-col gap-2 bg-linear-to-t from-background via-background/90 to-transparent p-3">
                 <div>
                   {props.repoLink ? (
                     <a
@@ -93,8 +88,9 @@ export default function ProjectCard(props: ProjectCardProps) {
                       : "opacity-0 translate-y-2 pointer-events-none h-0 overflow-hidden"
                   }`}
                   onClick={() => {
-                    setSelectedProject("ABBE");
-                    scrollToTop();
+                    if (props.project) {
+                      handleProjectDetailsClick(props.project);
+                    }
                   }}
                 >
                   Learn more <ArrowUpRight />
@@ -117,7 +113,7 @@ export default function ProjectCard(props: ProjectCardProps) {
         )}
 
         <div className="flex flex-wrap gap-2">
-          {props.techStack.map((tech) => (
+          {props.techStack?.map((tech) => (
             <Badge
               key={tech}
               variant={"secondary"}

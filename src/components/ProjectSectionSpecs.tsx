@@ -4,11 +4,7 @@ import type { ProjectCardProps } from "./ProjectCard";
 import { DateRange } from "@/lib/DateRange";
 import { Badge } from "./ui/badge";
 
-interface ProjectSectionSpecsProps extends ProjectCardProps {
-  projectType?: string;
-  companyName?: string;
-  tools?: string[];
-}
+interface ProjectSectionSpecsProps extends ProjectCardProps {}
 
 export default function ProjectSectionSpecs(props: ProjectSectionSpecsProps) {
   const dateRange = DateRange(props.startDate, props.endDate);
@@ -40,23 +36,26 @@ export default function ProjectSectionSpecs(props: ProjectSectionSpecsProps) {
         </div>
         {props.projectType}
       </div>
-      <div className="flex gap-2">
-        <div className="flex gap-2 min-w-40 text-muted-foreground">
-          <Layers strokeWidth={1.5} />
-          Tech Stack
+      {props.techStack && (
+        <div className="flex gap-2">
+          <div className="flex gap-2 min-w-40 text-muted-foreground">
+            <Layers strokeWidth={1.5} />
+            Tech Stack
+          </div>
+          <div className="flex flex-wrap gap-2">
+            {props.techStack?.map((tech) => (
+              <Badge
+                key={tech}
+                variant={"secondary"}
+                className="font-normal text-muted-foreground"
+              >
+                {tech}
+              </Badge>
+            ))}
+          </div>
         </div>
-        <div className="flex flex-wrap gap-2">
-          {props.techStack.map((tech) => (
-            <Badge
-              key={tech}
-              variant={"secondary"}
-              className="font-normal text-muted-foreground"
-            >
-              {tech}
-            </Badge>
-          ))}
-        </div>
-      </div>
+      )}
+
       <div className="flex gap-2">
         <div className="flex gap-2 min-w-40 text-muted-foreground">
           <Toolbox strokeWidth={1.5} />

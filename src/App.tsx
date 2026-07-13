@@ -8,8 +8,9 @@ import ABBESection from "./components/Sections/ABBESection";
 import { useState, useEffect, useContext } from "react";
 import { DetailsSectionContext } from "./contexts/DetailsSectionContext";
 import { scrollToTop } from "./utils/Scroll";
-import { ArrowUp } from "lucide-react";
+import { ArrowUp, Github, Linkedin, Mail } from "lucide-react";
 import { Button } from "./components/ui/button";
+import BequikSection from "./components/Sections/BequikSection";
 
 function App() {
   const [pendingScroll, setPendingScroll] = useState("");
@@ -53,39 +54,53 @@ function App() {
             <div className="lg:h-screen lg:justify-center lg:py-0 flex flex-col">
               <MainSection />
               <hr />
-              <div className="hidden lg:flex lg:flex-col lg:items-start lg:gap-6 lg:mt-12">
-                <button
-                  onClick={() => scrollToSection("background")}
-                  className="relative fit-content hover:after:absolute hover:after:bg-accent
+              <div className="hidden lg:flex lg:flex-col lg:justify-between lg:h-5/12">
+                <div className="hidden lg:flex lg:flex-col lg:items-start lg:gap-6 lg:mt-12">
+                  <button
+                    onClick={() => scrollToSection("background")}
+                    className="relative fit-content hover:after:absolute hover:after:bg-accent
                   hover:after:inset-0 hover:after:-z-10 hover:px-4 hover:font-bold py-1
                   transition-all duration-300"
-                >
-                  Background
-                </button>
-                <button
-                  onClick={() => scrollToSection("experiences")}
-                  className="relative fit-content hover:after:absolute hover:after:bg-accent
+                  >
+                    Background
+                  </button>
+
+                  <button
+                    onClick={() => scrollToSection("projects")}
+                    className="relative fit-content hover:after:absolute hover:after:bg-accent
                   hover:after:inset-0 hover:after:-z-10 hover:px-4 hover:font-bold py-1
                   transition-all duration-300"
-                >
-                  Experiences
-                </button>
-                <button
-                  onClick={() => scrollToSection("projects")}
-                  className="relative fit-content hover:after:absolute hover:after:bg-accent
+                  >
+                    Projects
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("skills")}
+                    className="relative fit-content hover:after:absolute hover:after:bg-accent
                   hover:after:inset-0 hover:after:-z-10 hover:px-4 hover:font-bold py-1
                   transition-all duration-300"
-                >
-                  Projects
-                </button>
-                <button
-                  onClick={() => scrollToSection("skills")}
-                  className="relative fit-content hover:after:absolute hover:after:bg-accent
+                  >
+                    Skills & Technologies
+                  </button>
+                  <button
+                    onClick={() => scrollToSection("experiences")}
+                    className="relative fit-content hover:after:absolute hover:after:bg-accent
                   hover:after:inset-0 hover:after:-z-10 hover:px-4 hover:font-bold py-1
                   transition-all duration-300"
-                >
-                  Skills & Technologies
-                </button>
+                  >
+                    Experiences
+                  </button>
+                </div>
+                <div className="hidden lg:flex lg:gap-6">
+                  <a href="https://github.com/albarr15">
+                    <Github className="transition-all ease-in-out cursor-pointer hover:scale-120" />
+                  </a>
+                  <a href="https://www.linkedin.com/in/clarissa-albarracin-0a2b882aa/">
+                    <Linkedin className="transition-all ease-in-out cursor-pointer hover:scale-120" />
+                  </a>
+                  <a href="mailto:clarissa.albarracin@gmail.com">
+                    <Mail className="transition-all ease-in-out cursor-pointer hover:scale-120" />
+                  </a>
+                </div>
               </div>
             </div>
           </aside>
@@ -93,9 +108,10 @@ function App() {
             {selectedProject == "" && (
               <>
                 <BackgroundSection />
-                <ExperiencesSection />
                 <ProjectsSection />
                 <SkillsTechSection />
+                <ExperiencesSection />
+
                 <Button
                   variant={"outline"}
                   onClick={() => scrollToTop()}
@@ -108,6 +124,7 @@ function App() {
             )}
 
             {selectedProject == "ABBE" && <ABBESection />}
+            {selectedProject == "Bequik" && <BequikSection />}
           </main>
         </div>
       </DetailsSectionContext.Provider>
